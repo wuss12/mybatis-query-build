@@ -50,7 +50,7 @@ public class QueryHelper {
     public static QueryHelper build( Class queryClass){
         String returnObject = getRealTypeName(queryClass.getName());
         QueryHelper logicDomain = new QueryHelper(returnObject, returnObject+"Qry", firstUpUpOrLow(returnObject,false)+"Mapper", queryClass);
-        checkBeforeInit();
+//        checkBeforeInit();
         initFilesLists(logicDomain);
         initFiledAndTypeMap(logicDomain);
         return logicDomain;

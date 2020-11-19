@@ -2,6 +2,27 @@
 针对 mybatis自动生成工具生成的类，如果前台界面查询条件 很多一个个
 手写查询条件 比较复杂如果不留意赋值错误 会引入bug，因此引入自动化生成
 对应查询的 logic 类
+
+# 例子
+SpRiskRecord 是想要生成的 对应查询条件 也是 mybatis 生成的 domain
+```
+    
+    private Long id;
+    private String customerId;
+    private String orgCode;
+    private String orgName;
+    private String riskType;
+    private String riskLevel;
+    private String remark;
+    private Integer createDate;
+    private Long createDatetime;
+
+    
+```
+ 针对时间查询需要满足区间查询，
+ 因此要生成上述9个字段的查询
+ SpRiskRecord 我们放在了dto 中
+
 # mybatis 生成配置文件如下
 ```
 <?xml version="1.0" encoding="UTF-8"?>  
@@ -133,9 +154,6 @@ public class SpRiskRecordQry extends PageParameter implements Serializable {
 ```
 # 生成的对应查询条件的 logic如下
 ```
-```
-
-
 @Repository
 public class SpRiskRecordLogic{
     
@@ -211,3 +229,4 @@ public class SpRiskRecordLogic{
         return pageDomain;
     }
     
+```

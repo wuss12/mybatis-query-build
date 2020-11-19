@@ -1,211 +1,111 @@
 package com.wuss.dto;
 
-import com.wuss.dao.PageParameter;
+
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import java.io.Serializable;
 
-public class SpRiskRecord extends PageParameter implements Serializable {
-    /**
-     * 标准ID -- sp_risk_record.id
-     * 
-     */
+public class SpRiskRecord  implements Serializable {
+    
     private Long id;
-
-    /**
-     * 客户ID -- sp_risk_record.customer_id
-     * 
-     */
     private String customerId;
-
-    /**
-     * 统一社会信用代码 -- sp_risk_record.org_code
-     * 
-     */
     private String orgCode;
-
-    /**
-     * 服务商名称 -- sp_risk_record.org_name
-     * 
-     */
     private String orgName;
-
-    /**
-     * 风控信息类型 -- sp_risk_record.risk_type
-     * 
-     */
     private String riskType;
-
-    /**
-     * 风险等级 -- sp_risk_record.risk_level
-     * 
-     */
     private String riskLevel;
-
-    /**
-     * 备注 -- sp_risk_record.remark
-     * 
-     */
     private String remark;
-
-    /**
-     * 创建日期 -- sp_risk_record.create_date
-     * 
-     */
     private Integer createDate;
-
-    /**
-     * 创建时间戳 -- sp_risk_record.create_datetime
-     * 
-     */
     private Long createDatetime;
 
-    /**
-     * sp_risk_record表的操作属性:serialVersionUID
-     * 
-     */
+    
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 数据字段 sp_risk_record.id的get方法 
-     * 
-     */
+    
     public Long getId() {
         return id;
     }
 
-    /**
-     * 数据字段 sp_risk_record.id的set方法
-     * 
-     */
+    
     public void setId(Long id) {
         this.id = id;
     }
 
-    /**
-     * 数据字段 sp_risk_record.customer_id的get方法 
-     * 
-     */
+    
     public String getCustomerId() {
         return customerId;
     }
 
-    /**
-     * 数据字段 sp_risk_record.customer_id的set方法
-     * 
-     */
+    
     public void setCustomerId(String customerId) {
         this.customerId = customerId == null ? null : customerId.trim();
     }
 
-    /**
-     * 数据字段 sp_risk_record.org_code的get方法 
-     * 
-     */
+    
     public String getOrgCode() {
         return orgCode;
     }
 
-    /**
-     * 数据字段 sp_risk_record.org_code的set方法
-     * 
-     */
+    
     public void setOrgCode(String orgCode) {
         this.orgCode = orgCode == null ? null : orgCode.trim();
     }
 
-    /**
-     * 数据字段 sp_risk_record.org_name的get方法 
-     * 
-     */
+    
     public String getOrgName() {
         return orgName;
     }
 
-    /**
-     * 数据字段 sp_risk_record.org_name的set方法
-     * 
-     */
+    
     public void setOrgName(String orgName) {
         this.orgName = orgName == null ? null : orgName.trim();
     }
 
-    /**
-     * 数据字段 sp_risk_record.risk_type的get方法 
-     * 
-     */
+    
     public String getRiskType() {
         return riskType;
     }
 
-    /**
-     * 数据字段 sp_risk_record.risk_type的set方法
-     * 
-     */
+    
     public void setRiskType(String riskType) {
         this.riskType = riskType == null ? null : riskType.trim();
     }
 
-    /**
-     * 数据字段 sp_risk_record.risk_level的get方法 
-     * 
-     */
+    
     public String getRiskLevel() {
         return riskLevel;
     }
 
-    /**
-     * 数据字段 sp_risk_record.risk_level的set方法
-     * 
-     */
+    
     public void setRiskLevel(String riskLevel) {
         this.riskLevel = riskLevel == null ? null : riskLevel.trim();
     }
 
-    /**
-     * 数据字段 sp_risk_record.remark的get方法 
-     * 
-     */
+    
     public String getRemark() {
         return remark;
     }
 
-    /**
-     * 数据字段 sp_risk_record.remark的set方法
-     * 
-     */
+    
     public void setRemark(String remark) {
         this.remark = remark == null ? null : remark.trim();
     }
 
-    /**
-     * 数据字段 sp_risk_record.create_date的get方法 
-     * 
-     */
+    
     public Integer getCreateDate() {
         return createDate;
     }
 
-    /**
-     * 数据字段 sp_risk_record.create_date的set方法
-     * 
-     */
+    
     public void setCreateDate(Integer createDate) {
         this.createDate = createDate;
     }
 
-    /**
-     * 数据字段 sp_risk_record.create_datetime的get方法 
-     * 
-     */
+    
     public Long getCreateDatetime() {
         return createDatetime;
     }
 
-    /**
-     * 数据字段 sp_risk_record.create_datetime的set方法
-     * 
-     */
+    
     public void setCreateDatetime(Long createDatetime) {
         this.createDatetime = createDatetime;
     }
@@ -215,10 +115,7 @@ public class SpRiskRecord extends PageParameter implements Serializable {
         return ReflectionToStringBuilder.toString(this);
     }
 
-    /**
-     * sp_risk_record数据表的操作方法: equals  
-     * 
-     */
+    
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -242,10 +139,7 @@ public class SpRiskRecord extends PageParameter implements Serializable {
             && (this.getCreateDatetime() == null ? other.getCreateDatetime() == null : this.getCreateDatetime().equals(other.getCreateDatetime()));
     }
 
-    /**
-     * sp_risk_record数据表的操作方法: hashCode  
-     * 
-     */
+    
     @Override
     public int hashCode() {
         final int prime = 31;
