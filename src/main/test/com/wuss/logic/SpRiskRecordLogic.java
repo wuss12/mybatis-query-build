@@ -2,6 +2,7 @@ package com.wuss.logic;
 
 import com.wuss.domain.PageDataList;
 import com.wuss.dto.SpRiskRecord;
+import com.wuss.qry.SpRiskRecordQry;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
