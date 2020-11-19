@@ -1,0 +1,62 @@
+package com.wuss.logic;
+
+import com.wuss.domain.PageDataList;
+import com.wuss.dto.${domain.returnObject};
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+
+@Repository
+public class ${domain.returnObject}Logic{
+    
+    @Autowired
+    private ${domain.returnObject}Mapper ${domain.mapperName};
+
+    public PageDataList<$domain.returnObject> pageDataLists($domain.queryObject qry){
+
+        PageDataList<$domain.returnObject> pageDomain = new PageDataList<>();
+
+        ${domain.returnObject}Criteria example = new ${domain.returnObject}Criteria();
+
+        example.setStart(qry.getStart());
+        example.setLimit(qry.getLimit());
+        example.setOrderByClause("id desc");
+
+        ${domain.returnObject}Criteria.Criteria criteria = example.createCriteria();
+
+#foreach($element in $domain.stringFiles)
+        if (StringUtils.isNotBlank(qry.get${element}())){
+            criteria.and${element}EqualTo(qry.get${element}());
+        }
+
+#end
+ #foreach($element in $domain.notStringFiles)
+        if (qry.get${element}() != null){
+            criteria.and${element}EqualTo(qry.get${element}());
+        }
+
+
+#end
+#foreach($element in $domain.dateStringFiles)
+        if (qry.get${element}Start() != null){
+            criteria.and${element}GreaterThanOrEqualTo(qry.get${element}Start());
+        }
+
+        if (qry.get${element}End() != null){
+            criteria.and${element}LessThanOrEqualTo(qry.get${element}End());
+        }
+
+#end
+
+        int count = ${domain.mapperName}.countByExample(example);
+        pageDomain.setTotal(count);
+
+        if (count == 0){
+            return pageDomain;
+        }
+
+        pageDomain.setRows(${domain.mapperName}.selectByExample(example));
+        return pageDomain;
+    }
+}

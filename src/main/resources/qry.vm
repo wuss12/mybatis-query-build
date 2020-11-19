@@ -1,0 +1,14 @@
+package com.wuss.qry;
+
+import com.wuss.dao.PageParameter;
+import lombok.Data;
+
+import java.io.Serializable;
+
+@Data
+public class $domain.queryObject extends PageParameter implements Serializable {
+
+#foreach($element in $domain.qrySet)
+    private $element.value $element.key;
+#end
+}
